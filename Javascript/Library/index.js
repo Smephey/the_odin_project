@@ -1,15 +1,22 @@
-console.log('I am the Library');
+let library = [];
 
-const theHobbit = {
-    title: "The Hobbit",
-    author: "J R R Tolkien",
-    pages: 405,
-    read: true,
-    info: function () {
-        return `${this.title} by ${this.author}, ${this.pages} pages, ${
-            this.read ? "read already" : "not read yet"
-        }`;
-    },
+function Book(title, author, length, read) {
+    this.title = title;
+    this.author = author;
+    this.length = length;
+    this.read = read;
+}
+
+Book.prototype.info = function () {
+    return `${this.title} by ${this.author}, ${this.length} pages, ${
+        this.read ? "read already" : "not read yet"
+    }`;
 };
 
-console.log('and this, is my book: ', theHobbit.info());
+function addBookToLibrary(book) {
+    library.push(book)
+}
+
+const hobbit = new Book('The Hobbit', 'J.R.R Tolkien', 405, true);
+addBookToLibrary(hobbit);
+console.log('current library: ', library)
