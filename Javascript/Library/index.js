@@ -19,15 +19,28 @@ function addBookToLibrary(title, author, length, read) {
 }
 
 function render() {
-    const container = document.getElementById('container');
+    const tableContainer = document.getElementById('table-container');
 
     library.forEach((book) => {
-        const bookTitle = book.title;
-        let titleContainer = document.createElement('h1');
-        titleContainer.innerText = bookTitle
-        container.appendChild(titleContainer);
+        const currentRow = addRowToContainer(tableContainer);
+        addBookToRow(book, currentRow);
     });
+}
 
+function addRowToContainer(container) {
+    const tr = document.createElement('tr');
+    container.appendChild(tr);
+    return tr;
+}
+
+function addBookToRow(book, row) {
+    for (const property in book) {
+        if (book.hasOwnProperty(property)) {
+            const td = document.createElement('td');
+            td.innerText = book[property];
+            row.appendChild(td);
+        }
+    }
 }
 
 addBookToLibrary('The Hobbit', 'J.R.R Tolkien', 405, true);
