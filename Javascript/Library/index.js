@@ -21,6 +21,8 @@ function addBookToLibrary(title, author, length, read) {
 function render() {
     const tableContainer = document.getElementById('table-container');
 
+    tableContainer.innerHTML = '';
+
     library.forEach((book) => {
         const currentRow = addRowToContainer(tableContainer);
         addBookToRow(book, currentRow);
@@ -41,6 +43,15 @@ function addBookToRow(book, row) {
             row.appendChild(td);
         }
     }
+}
+
+function addBook() {
+    const title = document.getElementById('title').value;
+    const author = document.getElementById('author').value;
+    const length = document.getElementById('length').value;
+    const read = document.getElementById('read').checked;
+    addBookToLibrary(title, author, length, read);
+    render();
 }
 
 addBookToLibrary('The Hobbit', 'J.R.R Tolkien', 405, true);
