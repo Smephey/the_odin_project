@@ -27,23 +27,23 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form id="newBookForm" action="" method="get">
+                <form id="newBookForm" action="index.html">
                     <label for="title">Title: </label>
-                    <input required type="text" id="title" name="book_title">
+                    <input type="text" id="title" name="book_title" required>
 
                     <label for="author">Author: </label>
-                    <input required type="text" id="author" name="book_title">
+                    <input type="text" id="author" name="book_title" required>
 
                     <label for="length">Length: </label>
-                    <input required type="number" id="length" name="book_title">
+                    <input type="number" id="length" name="book_title" required>
 
                     <label for="read">Read?</label>
-                    <input required type="checkbox" id="read" name="book_read">
+                    <input type="checkbox" id="read" name="book_read">
 
+                    <div class="modal-footer">
+                        <button type="submit" value="Submit" class="btn btn-primary">Save Book</button>
+                    </div>
                 </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary" onclick="addBook()">Save Book</button>
             </div>
         </div>
     </div>
