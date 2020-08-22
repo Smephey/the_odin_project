@@ -45,13 +45,11 @@ function renderNewBook(book) {
 
 function addRowToContainer(container) {
     const tr = document.createElement('tr');
-    tr.setAttribute('data-id', container.childElementCount);
     container.appendChild(tr);
     return tr;
 }
 
 function addBookToRow(book, row) {
-    const bookId = row.getAttribute('data-id');
     for (const property in book) {
         if (book.hasOwnProperty(property)) {
             const td = document.createElement('td');
@@ -62,15 +60,13 @@ function addBookToRow(book, row) {
     const deleteBtn = document.createElement('button');
     deleteBtn.textContent = 'Delete';
     deleteBtn.onclick = function () {
-        deleteBook(bookId)
+        deleteBook(row)
     };
     row.appendChild(deleteBtn);
 }
 
-function deleteBook(bookid) {
-    console.log('bookid: ', bookid);
-
-    console.log('tblContainer: ', tableContainer)
+function deleteBook(row) {
+    tableContainer.removeChild(row);
 }
 
 addBookToLibrary('The Hobbit', 'J.R.R Tolkien', 405, true);
