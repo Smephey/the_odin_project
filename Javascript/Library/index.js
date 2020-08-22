@@ -10,11 +10,9 @@ function Book(title, author, length, read) {
     this.read = read;
 }
 
-// Book.prototype.info = function () {
-//     return `${this.title} by ${this.author}, ${this.length} pages, ${
-//         this.read ? "read already" : "not read yet"
-//     }`;
-// };
+Book.prototype.toggleReadStatus = function () {
+    this.read = !this.read;
+};
 
 function addBookToLibrary(title, author, length, read) {
     const book = new Book(title, author, length, read);
@@ -57,16 +55,30 @@ function addBookToRow(book, row) {
             row.appendChild(td);
         }
     }
+    const readButton = document.createElement('button');
+    readButton.textContent = 'Read';
+    readButton.onclick = function () {
+        book.toggleReadStatus();
+        renderBook(book, row);
+    };
+    row.appendChild(readButton);
     const deleteBtn = document.createElement('button');
     deleteBtn.textContent = 'Delete';
     deleteBtn.onclick = function () {
         deleteBook(row)
     };
     row.appendChild(deleteBtn);
+    return row;
 }
 
 function deleteBook(row) {
     tableContainer.removeChild(row);
+}
+
+function renderBook(book, row) {
+    const newRow = document.createElement('tr');
+    const newBookRow = addBookToRow(book, newRow);
+    tableContainer.replaceChild(newBookRow, row);
 }
 
 addBookToLibrary('The Hobbit', 'J.R.R Tolkien', 405, true);
