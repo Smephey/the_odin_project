@@ -1,3 +1,4 @@
+import onLoad from "./home-page";
 import "./style.css";
 
-console.log("loaded in");
+onLoad();
