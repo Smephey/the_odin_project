@@ -1,0 +1,27 @@
+* {
+  color: white;
+}
+
+html {
+  background: url("./background-image.jpg") no-repeat center fixed;
+  background-size: cover;
+}
+
+h1 {
+  font-family: "Lato";
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+.title {
+  text-align: center;
+  margin-top: 300px;
+}
+
+.dashboard-copy {
+  width: 50vw;
+  margin: auto;
+}
