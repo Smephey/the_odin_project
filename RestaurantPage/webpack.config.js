@@ -8,6 +8,9 @@ module.exports = {
     homePage: './src/home-page.js',
   },
   devtool: 'inline-source-map',
+  devServer: {
+    static: './dist',
+  },
   plugins: [
     new HtmlWebpackPlugin({
       title: 'Cake and Bake',
