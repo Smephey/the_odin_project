@@ -1,5 +1,5 @@
 const loadHomePage = () => {
-  const contentDiv = document.createElement('div');
+  const contentDiv = document.createElement('main');
   const title = document.createElement('h1');
   const dashboardCopy = document.createElement('h3');
 
