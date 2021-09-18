@@ -1,4 +1,5 @@
-import onLoad from "./home-page";
-import "./style.css";
+import loadHomePage from './home-page';
+import './style.css';
 
-onLoad();
+console.log('gonna call load home page from home-page.js');
+loadHomePage();

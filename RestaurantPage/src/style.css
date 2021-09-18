@@ -3,12 +3,12 @@
 }
 
 html {
-  background: url("./background-image.jpg") no-repeat center fixed;
+  background: url('./assets/images/background-image.jpg') no-repeat center fixed;
   background-size: cover;
 }
 
 h1 {
-  font-family: "Lato";
+  font-family: 'Mulish Regular', sans-serif;
   font-size: 3rem;
 }
 
@@ -22,6 +22,32 @@ h2 {
 }
 
 .dashboard-copy {
+  font-family: 'Mulish Light', sans-serif;
   width: 50vw;
   margin: auto;
+}
+
+@font-face {
+  font-family: 'Mulish Light';
+  src: url('./assets/fonts/Mulish-Light.ttf');
+}
+
+@font-face {
+  font-family: 'Mulish Regular';
+  src: url('./assets/fonts/Mulish-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Mulish Medium';
+  src: url('./assets/fonts/Mulish-Medium.ttf');
+}
+
+@font-face {
+  font-family: 'Mulish SemiBold';
+  src: url('./assets/fonts/Mulish-SemiBold.ttf');
+}
+
+@font-face {
+  font-family: 'Mulish Bold';
+  src: url('./assets/fonts/Mulish-Bold.ttf');
 }

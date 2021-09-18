@@ -1,4 +1,4 @@
-const onLoad = () => {
+const loadHomePage = () => {
   const contentDiv = document.querySelector('#content');
   const title = document.createElement('h1');
   const dashboardCopy = document.createElement('h3');
@@ -14,4 +14,4 @@ const onLoad = () => {
   contentDiv.appendChild(dashboardCopy);
 };
 
-export default onLoad;
+export default loadHomePage;
