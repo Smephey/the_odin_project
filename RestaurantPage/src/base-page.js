@@ -1,4 +1,6 @@
+import contactPage from './contact-page';
 import homePage from './home-page';
+import menuPage from './menu-page';
 
 export function buildNavBar() {
   const navBarContainer = document.createElement('nav');
@@ -20,14 +22,14 @@ export function buildNavBar() {
   menuPageTab.addEventListener('click', (event) => {
     if (event.target.classList.contains('active')) return;
     setActiveTab(menuPageTab);
-    // load menu page
+    menuPage.buildContent();
   });
 
   const contactPageTab = createNavBarItem('Contact');
   contactPageTab.addEventListener('click', (event) => {
     if (event.target.classList.contains('active')) return;
     setActiveTab(contactPageTab);
-    // load contact page
+    contactPage.buildContent();
   });
 
   navBarContainer.appendChild(homePageTab);
