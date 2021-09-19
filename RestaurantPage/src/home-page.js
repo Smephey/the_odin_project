@@ -1,20 +1,30 @@
-const loadHomePage = () => {
-  const contentDiv = document.createElement('main');
-  const title = document.createElement('h1');
-  const dashboardCopy = document.createElement('h3');
+const homePage = (() => {
+  function buildContent() {
+    const parentContent = document.getElementById('content');
+    const oldContentDiv = document.getElementById('content-div');
+    const contentDiv = document.createElement('div');
+    contentDiv.id = 'content-div';
+    const title = document.createElement('h1');
+    const dashboardCopy = document.createElement('h3');
 
-  contentDiv.id = 'content';
+    title.innerHTML = 'Cake and Bake';
+    title.classList.add('title');
 
-  title.innerHTML = 'Cake and Bake';
-  title.classList.add('title');
+    dashboardCopy.innerHTML =
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque ipsam mollitia quam cum dolore facilis unde sit sunt distinctio quo. Eaque optio nisi nihil quisquam? Nostrum, ipsum officia. Nulla, perferendis?';
+    dashboardCopy.classList.add('dashboard-copy');
 
-  dashboardCopy.innerHTML =
-    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque ipsam mollitia quam cum dolore facilis unde sit sunt distinctio quo. Eaque optio nisi nihil quisquam? Nostrum, ipsum officia. Nulla, perferendis?';
-  dashboardCopy.classList.add('dashboard-copy');
+    contentDiv.appendChild(title);
+    contentDiv.appendChild(dashboardCopy);
 
-  document.body.appendChild(contentDiv);
-  contentDiv.appendChild(title);
-  contentDiv.appendChild(dashboardCopy);
-};
+    if (oldContentDiv) {
+      parentContent.replaceChild(contentDiv, oldContentDiv);
+    } else {
+      parentContent.appendChild(contentDiv);
+    }
+  }
 
-export default loadHomePage;
+  return { buildContent };
+})();
+
+export default homePage;

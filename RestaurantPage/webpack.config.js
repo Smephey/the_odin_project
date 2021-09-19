@@ -7,7 +7,7 @@ module.exports = {
     index: './src/index.js',
     homePage: './src/home-page.js',
   },
-  devtool: 'inline-source-map',
+  devtool: 'source-map',
   devServer: {
     static: './dist',
   },

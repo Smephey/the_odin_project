@@ -1,4 +1,4 @@
-import loadHomePage from './home-page';
+import homePage from './home-page';
 
 export function buildNavBar() {
   const navBarContainer = document.createElement('nav');
@@ -6,10 +6,14 @@ export function buildNavBar() {
 
   const homePageTab = createNavBarItem('Home');
   homePageTab.addEventListener('click', (event) => {
-    if (event.target.classList.contains('active')) return;
+    if (
+      event.target.classList.contains('active') ||
+      event.target.parentElement.classList.contains('active')
+    ) {
+      return;
+    }
     setActiveTab(homePageTab);
-    console.log('active');
-    // load home page
+    homePage.buildContent();
   });
 
   const menuPageTab = createNavBarItem('Menu');
@@ -29,6 +33,7 @@ export function buildNavBar() {
   navBarContainer.appendChild(homePageTab);
   navBarContainer.appendChild(menuPageTab);
   navBarContainer.appendChild(contactPageTab);
+  setActiveTab(homePageTab);
 
   return navBarContainer;
 }
@@ -37,7 +42,7 @@ function createNavBarItem(name) {
   const navBarItem = document.createElement('div');
   navBarItem.classList.add('nav-bar-item');
   const navBarItemTitle = document.createElement('h3');
-  navBarItemTitle.innerText = name;
+  navBarItemTitle.innerHTML = name;
   navBarItem.appendChild(navBarItemTitle);
   return navBarItem;
 }
@@ -55,9 +60,15 @@ function setActiveTab(tab) {
 
 export function buildSite() {
   const bodyContainer = document.body;
-  bodyContainer.appendChild(buildNavBar());
+  const headerContainer = document.createElement('header');
+  headerContainer.id = 'header';
+  const contentContainer = document.createElement('main');
+  contentContainer.id = 'content';
+  bodyContainer.appendChild(headerContainer);
+  bodyContainer.appendChild(contentContainer);
+  headerContainer.appendChild(buildNavBar());
 
-  loadHomePage();
+  homePage.buildContent();
 }
 
 export default buildSite;
