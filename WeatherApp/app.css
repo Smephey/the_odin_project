@@ -1,0 +1,32 @@
+* {
+  color: white;
+}
+body {
+  background-image: url('assets/snow-city-background.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 100vh;
+}
+
+.container {
+  width: 100%;
+}
+
+.container-side-panel {
+  height: 100vh;
+  backdrop-filter: blur(10px) brightness(0.7);
+}
+
+.search-field {
+  border: none;
+  outline: none;
+  opacity: 0.5;
+  color: white;
+  background-color: #a0a19d;
+  border-radius: 5px;
+}
+
+::placeholder {
+  color: white;
+}

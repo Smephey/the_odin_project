@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Messing Around</title>
+</head>
+
+<body>
+    <button id="shuffle">Shuffle</button>
+    <img src="#">
+    <script>
+        const img = document.querySelector('img');
+        fetch('https://api.giphy.com/v1/gifs/translate?api_key=K6sxFvNbO3uzoPpAoZKpGvrbFzNTHfdI&s=cats', {
+                mode: 'cors'
+            })
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (response) {
+                img.src = response.data.images.original.url;
+            })
+    </script>
+    <script>
+        document.getElementById("shuffle").addEventListener("click", changeImage)
+
+        function changeImage() {
+            fetch('https://api.giphy.com/v1/gifs/translate?api_key=K6sxFvNbO3uzoPpAoZKpGvrbFzNTHfdI&s=cats', {
+                    mode: 'cors'
+                })
+                .then(function (response) {
+                    return response.json();
+                })
+                .then(function (response) {
+                    img.src = response.data.images.original.url;
+                })
+        }
+    </script>
+</body>
+
+</html>
