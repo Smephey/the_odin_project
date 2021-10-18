@@ -15,13 +15,14 @@
     <div class="row">
         <main class="d-flex col">
             <article class="d-flex align-self-end weather-overview flex-row">
-                <h1 class="d-align-self-center">XX&#176;</h1>
-                <h2 class="d-flex city-name ms-3">City</h2>
+                <h1 class="d-align-self-center" id="current-temperature"></h1>
+                <h1>&#176;</span>
+                    <h2 class="d-flex city-name ms-3" id="current-city">City</h2>
             </article>
         </main>
         <aside class="container-side-panel col-4 px-5">
             <nav class="container w-100 pt-5">
-                <input type="text" class="search-field w-100 py-2" placeholder="Location">
+                <input id="search-input" type="text" class="search-field w-100 py-2" placeholder="Location">
             </nav>
             <article class="container d-flex flex-column pt-5">
                 <h3 class="side-panel-subtitle">Weather Details</h3>
