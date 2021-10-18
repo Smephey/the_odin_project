@@ -12,17 +12,28 @@
 
 <body>
     <div class="row">
-        <main class="container-main col">
-            <article>
-                asd
+        <main class="d-flex col">
+            <article class="align-self-end">
+                <h1 class="ml-5 mb-5">12</h1>
             </article>
         </main>
-        <aside class="container-side-panel col-4 col-md-5">
-            <nav class="d-flex justify-content-center pt-5">
-                <input type="text" class="search-field p-2 col-8" placeholder="Location">
+        <aside class="container-side-panel col-4 px-5">
+            <nav class="container w-100 pt-5">
+                <input type="text" class="search-field w-100 py-2" placeholder="Location">
             </nav>
-            <article>
+            <article class="container d-flex flex-column pt-5">
+                <h3 class="side-panel-subtitle">Weather Details</h3>
 
+                <div class="weather-details-table">
+                    <h5>Cloudy</h5>
+                    <h5>Humidity</h5>
+                    <h5>Wind</h5>
+                    <h5>Rain</h5>
+                </div>
+
+                <hr>
+
+                <h3 class="side-panel-subtitle">Temperature</h3>
             </article>
         </aside>
     </div>
