@@ -2,17 +2,22 @@
   color: white;
 }
 body {
-  background-image: url('assets/snow-city-background.jpg');
+  background-image: url('assets/rainy-background.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  min-height: 100vh;
+  height: 100vh;
+  overflow: hidden;
 }
 
 h1 {
   margin: 0;
   font-weight: 600;
   font-size: 6rem;
+}
+
+h2 {
+  font-size: 3rem;
 }
 
 h3 {
@@ -31,10 +36,6 @@ hr {
   margin: 1.25rem 0;
 }
 
-.container {
-  width: 100%;
-}
-
 .container-side-panel {
   height: 100vh;
   backdrop-filter: blur(10px) brightness(0.7);
@@ -46,8 +47,18 @@ hr {
   color: #c4c4c3;
   background: none;
   border-bottom: 1px solid #c4c4c3;
+  padding-right: 24px;
+}
+
+.weather-overview {
+  margin-bottom: 100px;
+  margin-left: 150px;
 }
 
 ::placeholder {
   color: #c4c4c3;
+}
+
+.city-name {
+  padding-top: 15px;
 }
