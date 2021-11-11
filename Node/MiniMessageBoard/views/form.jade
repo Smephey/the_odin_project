@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  form(method="POST" action="/new")
+    h3 Create new message 
+
+    label(for="message-input") Message: 
+    input(type="text" id="message-input" class="form-control" name="message")
+
+    label(for="message-author") Author: 
+    input(type="text" id="message-author" class="form-control" name="author")
+
+    button(type="submit") Add Message
+
+
+  a(href="/") Back to messages page
+    

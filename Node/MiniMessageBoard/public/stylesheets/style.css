@@ -1,0 +1,15 @@
+body {
+	padding: 50px;
+	font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+}
+
+a {
+	color: #00b7ff;
+}
+
+section.message-card {
+	border: 1px solid black;
+	border-radius: 4px;
+	padding: 10px;
+	margin-top: 10px;
+}
